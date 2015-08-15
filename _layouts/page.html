@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.description }}</p>
+    <p>
+    <button class="btn btn-lg btn-success call-me-please" href="#" role="button">
+      <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+      Позвонить!
+    </button>
+      &nbsp;&nbsp;<a href="{{ site.baseurl }}/">Назад</a>
+    </p>
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="container marketing">
+  {{ content }}
+</div>

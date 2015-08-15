@@ -1,0 +1,7 @@
+<hr class="featurette-divider">
+<div class="container">
+  <footer>
+    <p class="pull-right"><a href="#" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">Наверх</a></p>
+    <p>Аттракцион невиданной щедрости {% unless page.path == "index.html" %}· <a href="{{ site.baseurl }}/">На главную</a>{% endunless %}{% unless page.path == "contacts.html" %} · <a href="{{ "/contacts.html" | prepend: site.baseurl }}">Контакты</a>{% endunless %}</p>
+  </footer>
+</div>

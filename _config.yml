@@ -1,0 +1,15 @@
+# Site settings
+title: Аттракцион невиданной щедрости в городе Екатеринбург
+email: "b25pLnN0cmVjaCtzZWxsb3V0QGdtYWlsLmNvbQ=="
+phone: "KzcgKDkxMikgMjQzIDkxIDI1"
+description: >
+  Распродажа вещей в городе Екатеринбург. Macbook pro, Fox Sport, Adidas, Zalman и многое другое
+baseurl: "/sell-out"
+url: "https://strech.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: none
+
+# Carousel settings
+carousel_total_items_count: 3

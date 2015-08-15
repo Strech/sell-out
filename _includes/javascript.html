@@ -1,0 +1,28 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ "/javascripts/vendor/default.js" | prepend: site.baseurl }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+  $(function () {
+    var
+      email = base64_decode("{{ site.email }}"),
+      phone = base64_decode("{{ site.phone }}");
+
+    $(".call-me-please").popover({
+      title: "Позвони мне, позвони …",
+      content: '<a class="call-me-phone" href="#">Вычисляю по IP …</a><br><a class="call-me-email" href="#">Мы уже выехали за вами …&nbsp;</a>',
+      html: true,
+      placement: "bottom",
+      trigger: "manual"
+    }).on("shown.bs.popover", function() {
+      $(".call-me-phone").text(phone).attr("href", "tel:" + phone);
+      $(".call-me-email").text(email).attr("href", "mailto:" + email);
+    }).on("taphold", {duration: 500}, function() {
+      $(".call-me-please").popover("show");
+    }).on("click", function() {
+      $(".call-me-please").tooltip("show");
+    }).tooltip({
+      title: 'зажми меня',
+      placement: "top"
+    });
+  })
+</script>
