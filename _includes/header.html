@@ -1,2 +1,13 @@
 <header>
+  <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-{% if page.path == "index.html" %}inverse{% else %}default{% endif %} navbar-static-top">
+          <ul class="nav navbar-nav nav-justified">
+            <li{% if page.path == "tech.md" %} class="active"{% endif %}><a href="{{ "/tech.html" | prepend: site.baseurl }}">Техника</a></li>
+            <li{% if page.path == "sport.md" %} class="active"{% endif %}><a href="{{ "/sport.html" | prepend: site.baseurl }}">Спортивное снаряжение</a></li>
+            <li{% if page.path == "clothes.md" %} class="active"{% endif %}><a href="{{ "/clothes.html" | prepend: site.baseurl }}">Одежда</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 </header>

@@ -1,0 +1,27 @@
+---
+layout: page
+---
+
+<div class="container marketing">
+
+  {% assign index = 0 %}
+  {% for post in site.posts %}
+    {% if post.categories contains page.show_category %}
+      {% assign index = index | plus: 1 %}
+      {% assign row_index = index | modulo: 3 %}
+      {% if row_index == 1 %}<div class="row">{% endif %}
+
+      <div class="col-lg-4">
+        <img class="img-circle" src="{{ post.url | remove: '.html' | prepend: '/images' | prepend: site.baseurl }}.circle.jpg" alt="{{ post.title }}" width="140" height="140">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+        <p><a class="btn btn-default" href="{{ post.url | prepend: site.baseurl }}" role="button">Посмотреть</a></p>
+      </div>
+
+      {% if row_index == 0 or forloop.last %}</div>{% endif %}
+    {% endif %}
+  {% endfor %}
+
+</div>
+
+
