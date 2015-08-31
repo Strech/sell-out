@@ -2,11 +2,22 @@
 layout: default
 ---
 
+{% if page.selled == true %}
+  <span class="ribbon">
+    &nbsp;&nbsp;&nbsp;&nbsp;Продано&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>
+{% endif %}
+
 <div class="container">
   <div class="jumbotron">
     <h1>{{ page.title }}</h1>
     <p class="lead">{{ page.description }}</p>
-    <h1 class="price"><sup><small>₽</small></sup>{{ page.price }}</h1>
+    <h1 class="price">
+      <sup><small>₽</small></sup>
+      {% if page.selled == true %}<del>{% endif %}
+        {{ page.price }}
+      {% if page.selled == true %}</del>{% endif %}
+    </h1>
     <p>
     <button class="btn btn-lg btn-success call-me-please" href="#" role="button">
       <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
